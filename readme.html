@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panduan Resmi Lengkap - YT Estate Builder Pro v9</title>
+    <style>
+      /* --- 1. GLOBAL RESET & BASE --- */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", "Roboto", Helvetica, Arial, sans-serif;
+        background-color: #0b0f19; /* Background Gelap Premium */
+        color: #e5e7eb; /* Teks Abu Terang */
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        font-size: 15px;
+      }
+
+      a {
+        color: #06b6d4;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      a:hover {
+        color: #22d3ee;
+        text-decoration: underline;
+      }
+
+      strong {
+        color: #fff;
+      }
+      code {
+        background: #1f2937;
+        padding: 2px 6px;
+        border-radius: 4px;
+        color: #f97316;
+        font-family: "Consolas", monospace;
+        font-size: 13px;
+        border: 1px solid #374151;
+      }
+
+      /* --- 2. LAYOUT UTAMA --- */
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px 60px 20px;
+      }
+
+      /* --- 3. HEADER & NAVBAR --- */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #1f2937;
+        margin-bottom: 40px;
+      }
+      .logo-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo-box {
+        width: 35px;
+        height: 35px;
+        background: linear-gradient(135deg, #84cc16, #06b6d4);
+        color: #000;
+        font-weight: 900;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+      }
+      .logo-text {
+        font-size: 20px;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.5px;
+      }
+      .text-green {
+        color: #84cc16;
+      }
+      .text-orange {
+        color: #f97316;
+      }
+      .text-blue {
+        color: #06b6d4;
+      }
+
+      .version-pill {
+        background: #1f2937;
+        color: #9ca3af;
+        font-size: 11px;
+        padding: 6px 12px;
+        border-radius: 20px;
+        border: 1px solid #374151;
+        font-family: monospace;
+        letter-spacing: 1px;
+      }
+
+      /* --- 4. HERO SECTION --- */
+      .hero {
+        text-align: center;
+        margin: 50px 0 60px 0;
+      }
+      .hero h1 {
+        font-size: 48px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        color: #fff;
+        font-weight: 900;
+      }
+      .hero p {
+        color: #9ca3af;
+        font-size: 18px;
+        max-width: 650px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      /* --- 5. GRID INFO --- */
+      .grid-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin-bottom: 40px;
+      }
+      .card {
+        background: #111827;
+        border: 1px solid #1f2937;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+      }
+      .card-title {
+        font-weight: 700;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 12px;
+      }
+
+      .spec-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+      }
+      .spec-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #1f2937;
+      }
+      .spec-item:last-child {
+        border-bottom: none;
+      }
+      .badge {
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 11px;
+        text-transform: uppercase;
+      }
+      .bg-purple-dim {
+        background: rgba(132, 204, 22, 0.15);
+        color: #ff00ff;
+        border: 1px solid rgba(132, 204, 22, 0.2);
+      }
+      .bg-green-dim {
+        background: rgba(132, 204, 22, 0.15);
+        color: #84cc16;
+        border: 1px solid rgba(132, 204, 22, 0.2);
+      }
+      .bg-blue-dim {
+        background: rgba(6, 182, 212, 0.15);
+        color: #06b6d4;
+        border: 1px solid rgba(6, 182, 212, 0.2);
+      }
+      .bg-orange-dim {
+        background: rgba(249, 115, 22, 0.15);
+        color: #f97316;
+        border: 1px solid rgba(249, 115, 22, 0.2);
+      }
+
+      .folder-box {
+        background: #000;
+        border: 1px solid #374151;
+        border-radius: 8px;
+        padding: 20px;
+        font-family: "Consolas", monospace;
+        font-size: 13px;
+        color: #d1d5db;
+      }
+      .tree-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      /* --- 6. ALERTS --- */
+      .alert {
+        border-radius: 16px;
+        padding: 30px;
+        margin-bottom: 40px;
+        border: 2px solid transparent;
+      }
+      .rdp-alert {
+        background: radial-gradient(
+          circle at top right,
+          #2a0a0a 0%,
+          #150505 100%
+        );
+        border-color: #ef4444;
+      }
+      .live-alert {
+        background: radial-gradient(
+          circle at top right,
+          #0a1a2a 0%,
+          #050a15 100%
+        );
+        border-color: #06b6d4;
+      }
+      .alert-header {
+        font-size: 20px;
+        font-weight: 800;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .rdp-header {
+        color: #ef4444;
+      }
+      .live-header {
+        color: #06b6d4;
+      }
+
+      .step-box {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+
+      /* --- 7. KONTEN --- */
+      h2 {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 60px;
+        margin-bottom: 25px;
+        padding-left: 20px;
+        border-left: 5px solid #06b6d4;
+      }
+      h3 {
+        color: #84cc16;
+        font-size: 18px;
+        margin-top: 35px;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      ol.step-list {
+        counter-reset: step;
+        list-style: none;
+        padding: 0;
+      }
+      ol.step-list li {
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: 15px;
+      }
+      ol.step-list li:before {
+        content: counter(step);
+        counter-increment: step;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 25px;
+        height: 25px;
+        background: #374151;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #1f2937;
+      }
+
+      ul.bullet-list {
+        list-style: none;
+        padding: 0;
+      }
+      ul.bullet-list li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 10px;
+        color: #d1d5db;
+      }
+      ul.bullet-list li:before {
+        content: "•";
+        color: #f97316;
+        font-size: 20px;
+        position: absolute;
+        left: 5px;
+        top: -5px;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .feature-item {
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #1f2937;
+        transition: 0.3s;
+      }
+      
+      .footer {
+        border-top: 1px solid #1f2937;
+        margin-top: 80px;
+        padding-top: 30px;
+        text-align: center;
+        color: #6b7280;
+        font-size: 13px;
+      }
+
+      /* Tutorial Box */
+      .tutorial-box {
+        background: #111827;
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 15px;
+        border: 1px solid #1f2937;
+      }
+      .tutorial-box strong {
+        color: #06b6d4;
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+      .tutorial-box p {
+        font-size: 13.5px;
+        color: #9ca3af;
+        margin: 0;
+      }
+
+      /* --- VIDEO TUTORIAL CARD --- */
+      .video-card {
+        background: #111827;
+        border: 1px solid #1f2937;
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        text-align: center;
+      }
+      .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        aspect-ratio: 16 / 9;
+        background: #000;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid #374151;
+      }
+      .video-thumbnail {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.6;
+        transition: 0.3s;
+      }
+      .video-container:hover .video-thumbnail {
+        opacity: 0.8;
+      }
+      .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: 70px;
+        background: rgba(132, 204, 22, 0.9); /* Warna Hijau App */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        transition: 0.3s;
+      }
+      .play-button:before {
+        content: "";
+        border-style: solid;
+        border-width: 15px 0 15px 25px;
+        border-color: transparent transparent transparent #000;
+        margin-left: 5px;
+      }
+      .video-container:hover .play-button {
+        transform: translate(-50%, -50%) scale(1.1);
+        background: #84cc16;
+      }
+
+      @media (max-width: 768px) {
+        .grid-info,
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero h1 {
+          font-size: 32px;
+        }
+        .navbar {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo-wrapper">
+          <div class="logo-box">Y</div>
+          <div class="logo-text">
+            YT Estate <span class="text-green">Builder</span
+            ><span class="text-orange">Pro</span>
+          </div>
+        </div>
+        <div class="version-pill">v11 Enterprise Edition</div>
+      </nav>
+
+      <div class="hero">
+        <h1>
+          Membangun <span class="text-green">Aset Digital</span><br />secara
+          Otomatis & Cerdas.
+        </h1>
+        <p>
+          Dokumentasi resmi manajemen aset YouTube. Panduan langkah-demi-langkah
+          untuk memaksimalkan fitur otomatisasi, live streaming, hingga analitik
+          mendalam.
+        </p>
+      </div>
+
+      <div class="grid-info">
+        <div class="card" style="border-top: 4px solid #84cc16">
+          <div class="card-title text-green">🚀 Performa Sistem</div>
+          <ul class="spec-list">
+            <li class="spec-item">
+              <span style="color: #9ca3af">Database Engine</span
+              ><span class="badge bg-purple-dim">SQLite WAL Mode</span>
+            </li>
+            <li class="spec-item">
+              <span style="color: #9ca3af">Background Worker</span
+              ><span class="badge bg-blue-dim">Multi-Thread</span>
+            </li>
+            <li class="spec-item">
+              <span style="color: #9ca3af">Security System</span
+              ><span class="badge bg-orange-dim">HWID Locked</span>
+            </li>
+            <li class="spec-item">
+              <span style="color: #9ca3af">Run Mode</span
+              ><span class="badge bg-green-dim">ADMINISTRATOR</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-top: 4px solid #f97316">
+          <div class="card-title text-orange">📁 Struktur Folder Wajib</div>
+          <div class="folder-box">
+            <div class="tree-item">
+              📂 <span style="color: #6b7280">YTEstateBuilderPro.V11/</span>
+            </div>
+            <div class="tree-item" style="padding-left: 20px">
+              🤖
+              <strong style="color: #ff00ff">YTEstateBuilderPro.V11.exe</strong>
+              (Main App)
+            </div>
+            <div class="tree-item" style="padding-left: 20px">
+              ⚙️ <span style="color: #06b6d4">wupload.exe</span> (Mesin Auto
+              Upload)
+            </div>
+            <div class="tree-item" style="padding-left: 20px">
+              ⚙️ <span style="color: #06b6d4">wlive.exe</span> (Mesin Auto Live
+              Streaming)
+            </div>
+            <div class="tree-item" style="padding-left: 20px">
+              💾
+              <span style="color: #9ca3af">YTEstateBuilder.db</span> (Database
+              Lokal)
+            </div>
+            <div class="tree-item" style="padding-left: 20px">
+              📂 <span style="color: #f97316">secrets/</span> (Simpan Multi JSON
+              disini)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert rdp-alert">
+        <div class="alert-header rdp-header">
+          ⚠️ KRITIKAL: PENGGUNA RDP / VPS
+        </div>
+        <p>
+          Aplikasi mengikuti <b>JAM LOKAL WINDOWS</b>. Jika jam RDP tidak
+          disesuaikan ke WIB, jadwal upload/live akan berantakan.
+        </p>
+        <div class="step-box">
+          <strong style="color: #fff; display: block; margin-bottom: 10px"
+            >✅ SOP WAJIB SETIAP MEMBUKA RDP BARU:</strong
+          >
+          <ol class="step-list" style="color: #d1d5db">
+            <li>
+              Klik Kanan pada <b>Jam/Tanggal</b> di pojok kanan bawah Taskbar
+              RDP.
+            </li>
+            <li>Pilih menu <b>"Adjust date/time"</b>.</li>
+            <li>
+              Ubah <b>Time zone</b> menjadi:
+              <span style="color: #84cc16; font-weight: bold"
+                >(UTC+07:00) Bangkok, Hanoi, Jakarta</span
+              >.
+            </li>
+            <li>
+              Pastikan Jam di RDP sudah <b>SAMA PERSIS</b> dengan jam di HP Anda
+              saat ini.
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <h2>0. Persiapan Dasar (Sekali Seumur Hidup)</h2>
+
+      <h3>A. Menghubungkan Otak AI (Gemini Key)</h3>
+      <p>
+        Fitur Magic AI tidak akan berfungsi tanpa API Key Gemini. Ini gratis dan
+        kapasitasnya besar.
+      </p>
+      <ol class="step-list">
+        <li>
+          Buka situs resmi
+          <a href="https://aistudio.google.com/app/apikey" target="_blank"
+            >Google AI Studio</a
+          >.
+        </li>
+        <li>
+          Login dengan akun Google biasa. Klik tombol biru
+          <b>"Create API key"</b>.
+        </li>
+        <li>
+          Copy kode unik yang muncul (biasanya diawali huruf
+          <code>AIza...</code>).
+        </li>
+        <li>
+          Buka aplikasi > Tab <b>PENGATURAN</b> > Tempel di kolom
+          <b>Gemini API Key</b> > Klik <b>Simpan</b>.
+        </li>
+      </ol>
+
+      <h3>B. Membuat Kunci API YouTube (JSON)</h3>
+      <p>
+        Ini adalah 'tiket' aplikasi agar bisa mengakses channel Anda secara
+        resmi.
+      </p>
+      <ol class="step-list">
+        <li>
+          Buka
+          <a href="https://console.cloud.google.com/" target="_blank"
+            >Google Cloud Console</a
+          >. Buat <b>New Project</b>.
+        </li>
+        <li>
+          Masuk ke <b>APIs & Services > Library</b>. Cari dan <b>Enable</b>:
+          <code>YouTube Data API v3</code> & <code>YouTube Analytics API</code>.
+        </li>
+        <li>
+          Masuk ke <b>OAuth consent screen</b>. Pilih <b>External</b>. Isi App
+          Name bebas. Klik Save & Continue sampai selesai.
+        </li>
+        <li>
+          <b>PENTING:</b> Klik tombol <b>"PUBLISH APP"</b> di halaman OAuth agar
+          statusnya <i>In Production</i> (Token jadi awet).
+        </li>
+        <li>
+          Masuk ke <b>Credentials > + Create Credentials > OAuth client ID</b>.
+          Pilih tipe <b>Desktop App</b>.
+        </li>
+        <li>
+          Download file JSON tersebut. Masukkan ke folder
+          <code>secrets</code> di direktori aplikasi.
+        </li>
+      </ol>
+
+      <h2>1. Manajemen Studio (Upload Video)</h2>
+      <p>Pusat kendali penjadwalan konten untuk ratusan channel sekaligus.</p>
+      <div class="feature-grid">
+        <div
+          class="feature-item" style="background: #062621; border-color: #059669"
+        >
+          <strong class="text-blue">✍️ Input Manual (Magic AI SEO)</strong>
+          <p style="font-size: 13px; color: #9ca3af; margin-top: 10px">
+            Ketik topik di kolom judul, klik tombol ✨ AI. Metadata (Judul,
+            Desc, Tags) akan terisi otomatis dengan teknik SEO Clickbait.
+          </p>
+          <div class="tutorial-box">
+            <strong>Cara Pakai:</strong>
+            <p>
+              1. Klik <i>Input Manual</i>.<br />2. Pilih Channel.<br />3. Input
+              Topik di Judul > Klik ✨ AI.<br />4. Pilih Video & Thumb.<br />5.
+              Atur Jam Tayang > <i>Tambahkan ke Antrian</i>.
+            </p>
+          </div>
+        </div>
+        <div
+          class="feature-item"
+          style="background: #1a1010; border-color: #371b1b"
+        >
+          <strong class="text-orange">📂 Import Excel (Massal)</strong>
+          <p style="font-size: 13px; color: #9ca3af; margin-top: 10px">
+            Gunakan template Excel untuk mengisi ribuan jadwal tayang sekaligus.
+            Sangat efisien untuk pemain ternak channel.
+          </p>
+          <div class="tutorial-box">
+            <strong>Aturan Main:</strong>
+            <p>
+              1. Header Excel wajib sama (target_profile_name, video_path,
+              dll).<br />2. Format tanggal:
+              <code>YYYY-MM-DD HH:MM:SS</code>.<br />3. Cek kolom <i>File</i> di
+              tabel; pastikan ✅ OK.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="tutorial-box"
+        style="margin-top: 25px; border-left: 4px solid #84cc16"
+      >
+        <strong style="color: #84cc16"
+          >🚀 CARA MENJALANKAN UPLOAD OTOMATIS:</strong
+        >
+        <p>
+          Jadwal di tabel tidak akan terupload jika mesin mati. Klik tombol
+          <b>🟢 START AUTO UPLOAD</b>. Aplikasi akan membuat jadwal di Windows
+          Task Scheduler. Anda bisa menutup aplikasi (X), dan
+          <code>wupload.exe</code> akan tetap berjalan diam-diam setiap 15 menit
+          untuk mengecek antrian yang jatuh tempo.
+        </p>
+      </div>
+
+      <h2>2. Fitur Live Streaming (High Performance)</h2>
+      <div class="alert live-alert">
+        <div class="alert-header live-header">🚀 TEKNOLOGI ENGINE V11</div>
+        <p>
+          Gunakan <b>Ghost Mode</b> FFmpeg yang sangat hemat CPU (CPU < 5%).
+          Mendukung durasi siaran hingga 24 jam non-stop.
+        </p>
+      </div>
+
+      <h3>A. Menyiapkan Live Streaming Baru</h3>
+      <ol class="step-list">
+        <li>
+          Buka Tab <b>LIVE STREAMING</b>. Klik tombol <b>➕ Add Stream</b>.
+        </li>
+        <li><b>Target Channel:</b> Pilih channel yang ingin digunakan.</li>
+        <li>
+          <b>Video Sumber:</b> Pilih file video di komputer. Gunakan video
+          durasi lama (misal 1 jam) agar lebih stabil.
+        </li>
+        <li>
+          <b>Metode AUTO API:</b> Masukkan judul atau gunakan ✨ AI. Tentukan
+          durasi (misal 11 jam).
+        </li>
+        <li>
+          <b>🔁 Mode Loop:</b> Centang ini agar video diputar berulang-ulang
+          sampai durasi live berakhir.
+        </li>
+      </ol>
+
+      <h3>B. Memahami "Silent Mode" (Metode Hantu) 👻</h3>
+      <p>Ini adalah detail paling krusial untuk keamanan akun Anda:</p>
+      <ul class="bullet-list">
+        <li>
+          <b>Apa itu?</b> Jika dicentang, jadwal Live <b>TIDAK AKAN</b> muncul
+          di YouTube sekarang.
+        </li>
+        <li>
+          <b>Keamanan:</b> Mencegah laporan spam/flagging sebelum live dimulai.
+        </li>
+        <li>
+          <b>Cara Kerja:</b> Jadwal hanya ada di database lokal RDP Anda. Saat
+          jam tayang tiba, <code>wlive.exe</code> baru akan melakukan 'Booking'
+          ke YouTube API dan langsung memulai siaran saat itu juga.
+        </li>
+      </ul>
+
+      <h3>C. Menjalankan Mesin Live Monitor</h3>
+      <div class="feature-grid">
+        <div
+          class="feature-item"
+          style="background: #062621; border-color: #059669"
+        >
+          <strong style="color: #10b981">🟢 START LIVE MONITOR ON</strong>
+          <p style="font-size: 13px; color: #9ca3af; margin-top: 10px">
+            Aktifkan ini agar <code>wlive.exe</code> siaga di background. Semua
+            jadwal (termasuk Silent Mode) akan diproses otomatis oleh mesin ini.
+          </p>
+        </div>
+        <div
+          class="feature-item"
+          style="background: #261a06; border-color: #d97706"
+        >
+          <strong style="color: #fbbf24">▶️ START TERPILIH (Manual)</strong>
+          <p style="font-size: 13px; color: #9ca3af; margin-top: 10px">
+            Digunakan jika Anda ingin memulai siaran saat ini juga tanpa
+            menunggu jadwal. Hanya berfungsi jika stream key sudah ada di tabel.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="tutorial-box"
+        style="margin-top: 25px; border-left: 4px solid #ef4444"
+      >
+        <strong style="color: #ef4444">🔴 CARA BERHENTI YANG BENAR:</strong>
+        <p>
+          Jangan asal tutup aplikasi. Klik tombol
+          <b>🔴 STOP (Layanan Monitor)</b> di sebelah kanan. Ini akan membunuh
+          proses <code>wlive.exe</code> dan menyapu bersih semua
+          <code>ffmpeg.exe</code> yang masih menyangkut di RAM RDP Anda agar
+          resource kembali lega.
+        </p>
+      </div>
+
+      <h2>3. Fakta & Batasan Teknis (Wajib Baca)</h2>
+      <ul class="bullet-list">
+        <li>
+          <b>Batasan Thumbnail:</b> File gambar wajib di bawah <b>2 MB</b>. Jika
+          lebih, YouTube API akan menolak dan status menjadi GAGAL.
+        </li>
+        <li>
+          <b>Hak Akses Admin:</b> Aplikasi WAJIB dijalankan dengan
+          <b>Run as Administrator</b> agar bisa mengatur Scheduler Windows.
+        </li>
+        <li>
+          <b>Multi-Worker:</b> <code>wupload.exe</code> dan
+          <code>wlive.exe</code> bisa berjalan bersamaan tanpa saling
+          mengganggu.
+        </li>
+        <li>
+          <b>Anti-Banned:</b> Gunakan fitur <i>Humanizer</i> di Tab Pengaturan
+          untuk memberikan jeda acak antar upload agar pola tidak terbaca bot.
+        </li>
+        <ul class="bullet-list">
+        <li>
+          <b>Kuota Upload:</b> ~1.600 Poin per video. (Maksimal 6 video/hari per
+          JSON).
+        </li>
+        <li><b>Kuota Komentar:</b> 50 Poin per balasan.</li>
+        <li><b>Shorts:</b> Video vertikal < 3 menit otomatis masuk Shorts.</li>
+        <li><b>Thumbnail:</b> Wajib di bawah 2MB (JPG/PNG).</li>
+      </ul>
+      
+      <div style="background: #111827; border: 1px solid #374151; padding: 25px; border-radius: 12px; margin-top: 20px;">
+        <h3 class="text-orange" style="margin-top: 0;">📊 Kalkulasi Akurat Kuota API (10.000 Poin/Hari)</h3>
+        <p>Satu file <code>secrets.json</code> adalah "nyawa" akses Anda ke Google. Berikut adalah biaya resmi per tindakan:</p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 14px; background: #1f2937;">
+          <thead>
+            <tr style="background: #111827; border-bottom: 2px solid #374151; text-align: left;">
+              <th style="padding: 12px;">Jenis Aktivitas</th>
+              <th style="padding: 12px;">Biaya (Poin)</th>
+              <th style="padding: 12px;">Keterangan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #374151;"><td style="padding: 10px;"><b>Upload Video</b></td><td style="padding: 10px; color: #f87171;">1.600 - 1.650</td><td>Pengeluaran terbesar harian</td></tr>
+            <tr style="border-bottom: 1px solid #374151;"><td style="padding: 10px;"><b>Booking Live / Stop</b></td><td style="padding: 10px; color: #fbbf24;">50</td><td>Setiap buat event/selesai live</td></tr>
+            <tr style="border-bottom: 1px solid #374151;"><td style="padding: 10px;"><b>Komentar & Pin</b></td><td style="padding: 10px; color: #fbbf24;">50</td><td>Per satu kali komentar/balasan</td></tr>
+            <tr style="border-bottom: 1px solid #374151;"><td style="padding: 10px;"><b>Cek Analitik</b></td><td style="padding: 10px; color: #60a5fa;">10</td><td>Setiap klik "Ambil Laporan"</td></tr>
+            <tr><td style="padding: 10px;"><b>Scan Playlist / List</b></td><td style="padding: 10px; color: #60a5fa;">5</td><td>Membaca data dari YouTube</td></tr>
+          </tbody>
+        </table>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          
+          <div style="background: #181c25; padding: 20px; border-radius: 8px; border: 1px solid #0891b2;">
+            <strong style="color: #22d3ee; font-size: 16px;">Skenario 1: Fokus 1 Channel</strong>
+            <p style="font-size: 12px; color: #9ca3af;">(Ideal untuk Push Jam Tayang & Subs)</p>
+            <hr style="border: 0; border-top: 1px solid #374151; margin: 10px 0;">
+            <ul style="padding-left: 18px; font-size: 13px; color: #d1d5db; line-height: 1.8;">
+              <li>2x Upload Video: <b>3.300</b></li>
+              <li>2x Live Streaming (Booking): <b>100</b></li>
+              <li>2x Auto Comment & Pin: <b>100</b></li>
+              <li>2x Auto Stop Live: <b>100</b></li>
+              <li>10x Cek Analitik: <b>100</b></li>
+              <li>20x Scan Playlist/Sync: <b>100</b></li>
+              <li style="margin-top: 10px; font-size: 15px; color: #10b981;">Total Terpakai: <b>3.800 Poin</b></li>
+              <li style="list-style: none; font-weight: bold; color: #34d399;">✅ STATUS: SANGAT AMAN</li>
+            </ul>
+          </div>
+
+          <div style="background: #181c25; padding: 20px; border-radius: 8px; border: 1px solid #b45309;">
+            <strong style="color: #fbbf24; font-size: 16px;">Skenario 2: Duet 2 Channel</strong>
+            <p style="font-size: 12px; color: #9ca3af;">(Maksimal Kerja 1 JSON Secrets)</p>
+            <hr style="border: 0; border-top: 1px solid #374151; margin: 10px 0;">
+            <ul style="padding-left: 18px; font-size: 13px; color: #d1d5db; line-height: 1.8;">
+              <li>4x Upload (2/Ch): <b>6.600</b></li>
+              <li>4x Live Booking (2/Ch): <b>200</b></li>
+              <li>4x Auto Comment: <b>200</b></li>
+              <li>4x Auto Stop Live: <b>200</b></li>
+              <li>20x Cek Analitik: <b>200</b></li>
+              <li>40x Scan Playlist/DLL: <b>200</b></li>
+              <li style="margin-top: 10px; font-size: 15px; color: #fbbf24;">Total Terpakai: <b>7.600 Poin</b></li>
+              <li style="list-style: none; font-weight: bold; color: #fcd34d;">⚠️ STATUS: BATAS WAJAR</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 4px;">
+          <strong style="color: #34d399;">💡 Rekomendasi Pakar YT Estate:</strong>
+          <ul style="font-size: 13px; margin-top: 8px; padding-left: 20px;">
+            <li><b>Aturan Emas:</b> 1 file <code>secrets.json</code> jangan digunakan lebih dari <b>2 Channel</b> jika Anda rutin upload setiap hari.</li>
+            <li><b>Gunakan Ghost Mode (👻):</b> Saat Live Streaming, gunakan opsi <i>Silent Mode</i> agar sistem tidak melakukan request API berlebih untuk booking jadwal di muka.</li>
+            <li><b>Reset Waktu:</b> Jatah 10.000 poin akan diisi ulang otomatis oleh Google setiap <b>Jam 14:00 - 15:00 WIB</b>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>SEKILAS FITUR YT ETATSE BUILDER PRO V11</h2>
+      <div class="alert live-alert">
+        <div class="alert-header live-header">
+          🚀 TEKNOLOGI RAMAH RESOURCE REMOTE DEKSTOP PROTOKOL</div>
+          <ul class="bullet-list">
+            <li>
+              <strong>Spesifikasi Minimal :</strong> <code style="color: yellow;">RDP Windows Server 64bit - 2CPU - RAM 2GB</code>
+            </li>
+            <li>
+              <strong>Spesifikasi Rekomendasi :</strong> <code style="color: #00ff00;">RDP Windows Server 64bit - 2CPU/4CPU - RAM 4GB/6GB/8GB</code>
+            </li>
+            <li>
+              <strong>Jadwal Terdekat:</strong> Menampilkan target channel dan judul
+              video yang akan diproses selanjutnya oleh sistem.
+            </li>
+          </ul>
+      </div>
+
+      <h2>1. Dashboard Monitoring</h2>
+      <p>
+        Layar utama untuk memantau "kesehatan" kerajaan digital Anda secara
+        real-time.
+      </p>
+      <ul class="bullet-list">
+        <li>
+          <strong>Statistik Video:</strong> Pantau jumlah antrian (Pending),
+          video sukses, dan gagal secara instan.
+        </li>
+        <li>
+          <strong>Status Mesin:</strong> Indikator visual apakah
+          <code>wupload.exe</code> (Upload) dan <code>wlive.exe</code> (Live)
+          sedang aktif di background Windows.
+        </li>
+        <li>
+          <strong>Jadwal Terdekat:</strong> Menampilkan target channel dan judul
+          video yang akan diproses selanjutnya oleh sistem.
+        </li>
+      </ul>
+
+      <h2>2. Tab API JSON (Manajemen Akun)</h2>
+      <p>
+        Tempat menghubungkan ratusan channel YouTube secara resmi menggunakan
+        protokol OAuth2.
+      </p>
+      <ul class="bullet-list">
+        <li>Masukkan <b>Nama Profil</b> (nama panggilan internal bebas).</li>
+        <li>
+          Pilih <b>File API (JSON)</b> yang sudah Anda siapkan di folder
+          <code>secrets</code>.
+        </li>
+        <li>
+          Tentukan <b>Bahasa Channel</b> (ID/EN/UNIV) untuk optimasi interaksi
+          otomatis.
+        </li>
+        <li>
+          Klik <b>Sambungkan Akun</b>; browser akan terbuka untuk proses login
+          aman ke Google.
+        </li>
+      </ul>
+
+      <h2>3. Studio Jadwal (Pabrik Konten)</h2>
+      <p>
+        Pusat pengelolaan ribuan jadwal upload dengan fitur otomatisasi cerdas.
+      </p>
+      <div class="feature-grid">
+        <div class="feature-item" style="background: #062621; border-color: #059669">
+          <strong>✍️ Input Manual + Magic AI</strong>
+          <p>
+            Cukup ketik topik, klik tombol ✨ AI. Gemini AI akan meriset dan
+            menuliskan Judul Clickbait, Deskripsi SEO, dan Tags relevan secara
+            otomatis.
+          </p>
+        </div>
+        <div class="feature-item" style="background: #261a06; border-color: #d97706">
+          <strong>📂 Bulk Import Excel</strong>
+          <p>
+            Gunakan fitur ini untuk memasukkan ribuan jadwal sekaligus dalam
+            hitungan detik menggunakan template Excel.
+          </p>
+        </div>
+      </div>
+      <ul class="bullet-list" style="margin-top: 10px;">
+        <li>
+          <strong>Scan Playlist:</strong> Sinkronkan playlist channel Anda dan
+          masukkan video ke kategori yang tepat secara otomatis.
+        </li>
+        <li>
+          <strong>Log Worker:</strong> Pantau proses upload baris demi baris
+          melalui terminal log hijau neon di bagian bawah.
+        </li>
+      </ul>
+
+      <h2>4. Data Analitik (Intelijen All Channel)</h2>
+      <p>
+        Pantau performa seluruh aset digital Anda tanpa perlu login satu per
+        satu ke YouTube Studio.
+      </p>
+      <ul class="bullet-list">
+        <li>
+          <strong>Laporan Teks:</strong> Detail performa harian (Jam tayang,
+          Subs, Views) untuk channel spesifik.
+        </li>
+        <li>
+          <strong>🏆 Leaderboard:</strong> Fitur unggulan untuk mengadu performa
+          antar channel. Lihat channel mana yang menyumbang jam tayang paling
+          banyak dalam periode tertentu.
+        </li>
+        <li>
+          <strong>🏆 Leaderboard:</strong> Dari sekian banyak channel akan di urutkan dari atas yang terbaik. PILIH YANG TERBAIK UNTUK DI GAS POLL. yang kuran baik di ubah strategi & kontenya.
+        </li>
+      </ul>
+
+      <h2>5. Live Streaming (Engine Ghost Mode V11)</h2>
+      <p>
+        Teknologi siaran non-stop dengan beban CPU sangat rendah (< 5%) berkat
+        optimalisasi Ghost Mode FFmpeg.
+      </p>
+      <ul class="bullet-list">
+        <li>
+          <strong>Mode Loop:</strong> Siarkan video rekaman seolah-olah Live
+          24/7 untuk mengejar jam tayang.
+        </li>
+        <li>
+          <strong>Auto Cut-Off:</strong> Sistem akan menghentikan siaran secara
+          otomatis tepat saat durasi yang Anda tentukan habis.
+        </li>
+        <li>
+          <strong>Silent Mode (👻):</strong> Booking jadwal "dadakan" yang hanya
+          tersimpan di database lokal untuk keamanan akun dari flagging.
+        </li>
+      </ul>
+
+      <h2>6. Tab Pengaturan (Optimasi Keamanan Anti Spam)</h2>
+      <p>
+        Konfigurasi vital untuk memastikan akun Anda tetap aman dari deteksi
+        spam.
+      </p>
+      <ul class="bullet-list">
+        <li>
+          <strong>Interval Cek:</strong> Atur seberapa sering mesin mengecek
+          jadwal (Rekomendasi: 15-30 menit).
+        </li>
+        <li>
+          <strong>🤖 Humanizer Engine:</strong> Tambahkan jeda acak (Random
+          Delay) antar aktivitas upload agar pola aktivitas terlihat seperti
+          manusia normal.
+        </li>
+        <li>
+          <strong>Gemini API Key:</strong> Hubungkan otak AI untuk fitur Magic
+          SEO.
+        </li>
+      </ul>
+
+      <h2>7. Tools (GDRIVE Video Downloader)</h2>
+      <p>
+        Fitur premium untuk menarik aset video dari Google Drive langsung ke SSD
+        RDP Anda dengan kecepatan tinggi.
+      </p>
+      <ul class="bullet-list">
+        <li>Paste satu atau banyak link Google Drive (Single/Multi URL).</li>
+        <li>Pilih folder tujuan di RDP.</li>
+        <li>
+          Klik <b>Download Sekarang</b>. Sistem akan otomatis mensanitasi nama
+          file dan melewati file yang sudah ada (Anti-Duplikat).
+        </li>
+      </ul>
+
+      <h2>8. Tab About</h2>
+      <p>
+        Sekilas fitur, versi aplikasi, dan gerbang komunikasi langsung
+        dengan pengembang jika Anda memerlukan bantuan teknis atau pembaruan
+        fitur.
+      </p>
+
+      <div class="video-card">
+        <p style="font-size: 13px; font-weight: bold; color: #84cc16; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 15px;">
+          🎬 Video Panduan Lengkap (WAJIB TONTON)
+        </p>
+        <div class="video-container" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/Z64vQlf5818?autoplay=1\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen style=\'width:100%; height:100%;\'></iframe>'">
+          <img src="https://shpe.fun/ytestatebuilder.pro/yeb_up_live.jpg" alt="Video Tutorial" class="video-thumbnail">
+          <div class="play-button"></div>
+        </div>
+        <p style="color: #6b7280; font-size: 12px; margin-top: 15px; font-style: italic;">
+          Klik Tombol PLAY di atas untuk memutar video tutorial langsung di halaman ini.
+        </p>
+      </div>
+
+      <div style="margin-top: 60px; text-align: center">
+        <p
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            color: #6b7280;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+          "
+        >
+          Hubungi Pengembang
+        </p>
+        <div
+          class="feature-grid"
+          style="
+            grid-template-columns: 1fr 1fr;
+            max-width: 500px;
+            margin: 0 auto;
+          "
+        >
+          <a
+            href="https://t.me/maskdjie"
+            target="_blank"
+            class="feature-item"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+              background: #111827;
+              text-decoration: none;
+            "
+          >
+            <span style="font-size: 20px">✈️</span>
+            <strong class="text-blue" style="font-size: 14px">Telegram</strong>
+          </a>
+          <a
+            href="https://lynk.id/maskdjie/2zqqgyeo9jjv"
+            target="_blank"
+            class="feature-item"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+              background: #111827;
+              text-decoration: none;
+            "
+          >
+            <span style="font-size: 20px">🌐</span>
+            <strong class="text-green" style="font-size: 14px">Website</strong>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p><strong>YT Estate Builder Pro v11 Enterprise Edition</strong></p>
+        <p>
+          Aset Digital adalah Masa Depan. Bangun Kerajaan Digital Anda Secara
+          Otomatis.
+        </p>
+        <p style="margin-top: 10px; color: #4b5563">
+          &copy; 2025 Mas K Djie - All Rights Reserved.
+        </p>
+      </div>
+    </div>  
+  </body>
+</html>

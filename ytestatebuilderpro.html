@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YT Estate Builder Pro - Raja Ternak Channel Otomatis</title>
+
+    <meta
+      name="description"
+      content="Software otomatisasi YouTube #1 untuk ternak akun. Fitur lengkap: Multi-Channel, Auto Schedule, RDP Friendly, dan Analytics. Bangun aset digital otomatis sekarang!"
+    />
+    <meta
+      name="keywords"
+      content="YT Estate Builder, ternak channel youtube, auto upload youtube, tools youtube automation, rdp friendly software, mas k djie"
+    />
+    <meta name="author" content="Mas K Djie" />
+    <meta name="theme-color" content="#050505" />
+    <link rel="shortcut icon" href="icon_yeb.ico" type="image/x-icon" />
+    <link rel="icon" href="icon_yeb.png" type="image/png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shpe.fun/ytestatebuilder.pro" />
+    <meta
+      property="og:title"
+      content="YT Estate Builder Pro - Raja Ternak Channel Otomatis"
+    />
+    <meta
+      property="og:description"
+      content="Bangun aset digital otomatis! Kelola ratusan channel, upload massal, dan hemat waktu dengan fitur Humanizer Anti-Spam. Cek demonya disini!"
+    />
+    <meta
+      property="og:image"
+      content="https://shpe.fun/YT_Estate_Builder_Pro_v8.png"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://shpe.fun/ytestatebuilder.pro"
+    />
+    <meta
+      property="twitter:title"
+      content="YT Estate Builder Pro - Raja Ternak Channel Otomatis"
+    />
+    <meta
+      property="twitter:description"
+      content="Software ternak akun YouTube #1. Ringan di RDP, aman, dan full fitur."
+    />
+    <meta
+      property="twitter:image"
+      content="https://shpe.fun/ytestatebuilder.pro/yeb_up_live.jpg"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: {
+                900: "#050505", // Hitam Pekat
+                800: "#0F0F0F", // Abu Sangat Gelap
+                700: "#1A1A1A", // Card BG
+              },
+              gold: {
+                400: "#FFE55C",
+                500: "#D4AF37", // Emas Standar
+                600: "#B8962E",
+              },
+            },
+            fontFamily: {
+              sans: ["Outfit", "sans-serif"],
+            },
+            boxShadow: {
+              glow: "0 0 20px rgba(212, 175, 55, 0.3)",
+              "glow-strong": "0 0 40px rgba(212, 175, 55, 0.5)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Custom Utilities */
+      .text-gradient {
+        background: linear-gradient(to right, #d4af37, #ffe55c, #d4af37);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: 200% auto;
+        animation: shine 3s linear infinite;
+      }
+
+      @keyframes shine {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      /* Floating Animation untuk Gambar Hero */
+      .floating-img {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      /* Video Wrapper untuk Lazy Load */
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        background-color: #000;
+      }
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-dark-900 text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-gold-500 selection:text-black"
+  >
+    <nav
+      class="fixed w-full z-50 bg-dark-900/80 backdrop-blur-md border-b border-white/5"
+    >
+      <div
+        class="container mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-2">
+          <i class="fas fa-layer-group text-gold-500 text-2xl"></i>
+          <span class="text-white font-bold text-xl tracking-wide"
+            >YT ESTATE <span class="text-gold-500">PRO</span></span
+          >
+        </div>
+        <a
+          href="#pricing"
+          class="hidden md:inline-flex items-center gap-2 bg-white/5 hover:bg-gold-500 hover:text-black text-gold-500 px-6 py-2 rounded-full font-bold transition-all duration-300 border border-gold-500/30"
+        >
+          <i class="fas fa-download"></i> Ambil Akses
+        </a>
+      </div>
+    </nav>
+
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <div
+        class="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-500/10 rounded-full blur-[120px] -z-10"
+      ></div>
+
+      <div class="container mx-auto px-6">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center"
+        >
+          <div class="text-center lg:text-left z-10">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-sm font-bold mb-6"
+            >
+              <span class="animate-pulse">●</span> V11 ENTERPRISE EDITION
+            </div>
+
+            <h1
+              class="text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6"
+            >
+              Masih Upload Manual? <br />
+              <span class="text-gradient">Tinggalin Cara Kuno!</span>
+            </h1>
+
+            <p
+              class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+            >
+              Saatnya bangun <b>Kerajaan Digital (Youtube Estate)</b> lo secara
+              otomatis sambil rebahan. Kelola ratusan channel tanpa pusing
+              login-logout.
+              <span class="text-white font-bold block mt-2"
+                >✅ RDP Friendly, Ringan, & Anti Ribet Club!</span
+              >
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <a
+                href="#pricing"
+                class="group relative px-8 py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-black font-extrabold rounded-xl shadow-glow transition-all hover:scale-105 hover:shadow-glow-strong"
+              >
+                <i class="fas fa-rocket mr-2"></i> GASS AMBIL APLIKASINYA!
+                <div
+                  class="absolute inset-0 h-full w-full scale-0 rounded-xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/20"
+                ></div>
+              </a>
+              <a
+                href="#demo"
+                class="px-8 py-4 bg-dark-700 text-white font-bold rounded-xl border border-white/10 hover:border-gold-500/50 hover:text-gold-400 transition-all flex items-center justify-center gap-2"
+              >
+                <i class="fas fa-play-circle"></i> Lihat Demo
+              </a>
+            </div>
+
+            <div
+              class="mt-8 flex items-center justify-center lg:justify-start gap-4 text-sm text-slate-500"
+            >
+              <span class="flex items-center gap-1"
+                ><i class="fas fa-check text-green-500"></i> Lifetime
+                License</span
+              >
+              <span class="flex items-center gap-1"
+                ><i class="fas fa-check text-green-500"></i> Free Update</span
+              >
+            </div>
+          </div>
+
+          <div class="relative z-10 floating-img">
+            <div
+              class="relative rounded-2xl border border-white/10 bg-dark-800/50 p-2 shadow-2xl backdrop-blur-sm"
+            >
+              <img
+                src="YT_Estate_Builder_Pro_v8.1.png"
+                alt="Dashboard Aplikasi"
+                class="rounded-xl w-full h-auto border border-gold-500/20 shadow-lg"
+              />
+
+              <div
+                class="absolute -bottom-6 -left-6 bg-dark-800 border border-gold-500/30 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce"
+              >
+                <div class="bg-green-500/20 p-2 rounded-lg">
+                  <i class="fas fa-chart-line text-green-500 text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400">Status Worker</p>
+                  <p class="text-white font-bold">🟢 RUNNING (Auto)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="demo" class="py-20 bg-dark-800 border-y border-white/5">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            <i class="fas fa-eye text-gold-500 mr-2"></i> Liat Barangnya
+            Langsung!
+          </h2>
+          <p class="text-slate-400">
+            Jangan beli kucing dalam karung. Intip gimana mesin pencetak aset
+            ini bekerja 24 jam buat lo.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-gold-500/50 transition-all duration-300 bg-dark-900 shadow-2xl"
+          >
+            <div class="video-wrapper">
+              <iframe
+                loading="lazy"
+                srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/Ab5Y5sLwB2w?autoplay=1><img src=https://img.youtube.com/vi/Ab5Y5sLwB2w/hqdefault.jpg><span>▶</span></a>"
+                src="https://www.youtube.com/embed/Ab5Y5sLwB2w?autoplay=1"
+                title="Demo 1"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <div class="p-4 bg-dark-700">
+              <h3 class="text-gold-400 font-bold">
+                <i class="fas fa-robot mr-2"></i> Demo: Auto Upload & Auto Live Streaming
+              </h3>
+              <p class="text-xs text-slate-400 mt-1">
+                Liat gimana worker jalan sendiri tanpa disentuh.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-gold-500/50 transition-all duration-300 bg-dark-900 shadow-2xl"
+          >
+            <div class="video-wrapper">
+              <iframe
+                loading="lazy"
+                srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/Z64vQlf5818?autoplay=1><img src=https://img.youtube.com/vi/Z64vQlf5818/hqdefault.jpg><span>▶</span></a>"
+                src="https://www.youtube.com/embed/Z64vQlf5818?autoplay=1"
+                title="Demo 2"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <div class="p-4 bg-dark-700">
+              <h3 class="text-gold-400 font-bold">
+                <i class="fas fa-network-wired mr-2"></i> Demo: Multi-Channel & Multi API .json
+                Manager
+              </h3>
+              <p class="text-xs text-slate-400 mt-1">
+                Kelola ratusan akun dalam satu dashboard.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-dark-900 relative">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-4xl mx-auto mb-16">
+          <span
+            class="text-gold-500 font-bold tracking-widest text-sm uppercase"
+            >Power Features</span
+          >
+          <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-2 mb-6">
+            Kenapa Lo
+            <span
+              class="text-gold-500 underline decoration-4 underline-offset-4 decoration-gold-500/30"
+              >WAJIB PUNYA</span
+            >
+            Ini?
+          </h2>
+          <p class="text-slate-400 text-lg">
+            Bukan sekadar uploader biasa. Ini adalah "Sistem Operasi" buat para
+            peternak akun profesional yang mau scaling gila-gilaan.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="group p-8 rounded-2xl bg-dark-800 border border-white/25 hover:border-gold-500/50 hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2"
+          >
+            <div
+              class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-white/10 group-hover:border-gold-500 text-gold-500 text-2xl shadow-lg"
+            >
+              <i class="fas fa-users-cog"></i>
+            </div>
+            <h3
+              class="text-xl font-bold text-white mb-3 group-hover:text-gold-400"
+            >
+              Ternak Akun Unlimited
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Punya 10, 100, atau 1000 channel? Sikat semua dalam satu
+              dashboard. Gak perlu pusing switch akun manual lagi.
+            </p>
+          </div>
+
+          <div
+            class="group p-8 rounded-2xl bg-dark-800 border border-white/25 hover:border-gold-500/50 hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2"
+          >
+            <div
+              class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-white/10 group-hover:border-gold-500 text-gold-500 text-2xl shadow-lg"
+            >
+              <i class="fas fa-key"></i>
+            </div>
+            <h3
+              class="text-xl font-bold text-white mb-3 group-hover:text-gold-400"
+            >
+              Kuota API Anti Jebol
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Smart Multi-JSON Management. Hajar batas 10k poin per hari. Upload
+              massal ratusan video? Aman terkendali!
+            </p>
+          </div>
+
+          <div
+            class="group p-8 rounded-2xl bg-dark-800 border border-white/25 hover:border-gold-500/50 hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2"
+          >
+            <div
+              class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-white/10 group-hover:border-gold-500 text-gold-500 text-2xl shadow-lg"
+            >
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3
+              class="text-xl font-bold text-white mb-3 group-hover:text-gold-400"
+            >
+              Set & Forget (Auto)
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Isi jadwal via Excel, tinggal tidur. Worker kita yang kerja keras
+              upload satu-satu sesuai jam tayang (Drip Feed).
+            </p>
+          </div>
+
+          <div
+            class="group p-8 rounded-2xl bg-dark-800 border border-white/25 hover:border-gold-500/50 hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2"
+          >
+            <div
+              class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-white/10 group-hover:border-gold-500 text-gold-500 text-2xl shadow-lg"
+            >
+              <i class="fas fa-server"></i>
+            </div>
+            <h3
+              class="text-xl font-bold text-white mb-3 group-hover:text-gold-400"
+            >
+              Super Ringan di RDP
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Hemat CPU & RAM. RDP spek kentang (2GB) pun bisa jalan 24 jam
+              non-stop tanpa ngos-ngosan. Jauh lebih ringan dari bot browser!
+            </p>
+          </div>
+
+          <div
+            class="group p-8 rounded-2xl bg-dark-800 border border-white/25 hover:border-gold-500/50 hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2"
+          >
+            <div
+              class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-white/10 group-hover:border-gold-500 text-gold-500 text-2xl shadow-lg"
+            >
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3
+              class="text-xl font-bold text-white mb-3 group-hover:text-gold-400"
+            >
+              Humanizer Anti Spam
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Dilengkapi jeda acak antar upload biar aktivitas terlihat natural
+              seperti manusia dan gak dicurigai algoritma YouTube.
+            </p>
+          </div>
+
+          <div
+            class="group p-8 rounded-2xl bg-dark-800 border border-white/25 hover:border-gold-500/50 hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2"
+          >
+            <div
+              class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-white/10 group-hover:border-gold-500 text-gold-500 text-2xl shadow-lg"
+            >
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3
+              class="text-xl font-bold text-white mb-3 group-hover:text-gold-400"
+            >
+              Real-time Analytics
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Cek performa, jam tayang, dan subs langsung dari aplikasi. Liat
+              channel mana yang paling gacor di Leaderboard!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-dark-800 border-y border-gold-500/20">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col items-center mb-16 text-center">
+          <span
+            class="bg-gold-500 text-black px-4 py-1 rounded-full text-xs font-black mb-4 uppercase"
+            >New Update V11</span
+          >
+          <h2 class="text-3xl md:text-5xl font-black text-white">
+            Fitur "Dewa" Yang
+            <span class="text-gradient">Hanya Ada Di Sini!</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div
+            class="bg-dark-700 p-8 rounded-3xl border border-white/10 hover:border-gold-500 transition-all group"
+          >
+            <div class="flex items-start gap-6">
+              <div class="text-4xl text-gold-500">
+                <i class="fas fa-brain"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-white mb-3">
+                  Magic AI SEO Generator
+                </h3>
+                <p class="text-slate-400 leading-relaxed">
+                  Gak usah pusing riset judul! Cukup input satu kata kunci,
+                  <b>Gemini AI</b> bakal bikinin Judul Clickbait, Deskripsi SEO,
+                  dan Tags yang paling relevan.
+                  <span class="text-white"
+                    >Bikin video lo gampang ranking 1 tanpa mikir!</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-dark-700 p-8 rounded-3xl border border-white/10 hover:border-gold-500 transition-all group"
+          >
+            <div class="flex items-start gap-6">
+              <div class="text-4xl text-gold-500">
+                <i class="fas fa-ghost"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-white mb-3">
+                  Silent Ghost Mode (Live)
+                </h3>
+                <p class="text-slate-400 leading-relaxed">
+                  Booking jadwal live streaming secara "Ghaib". Jadwal gak bakal
+                  muncul di channel sebelum jam tayang tiba.
+                  <span class="text-white"
+                    >Sangat aman dari deteksi spam & aman dari flagging
+                    kompetitor nakal!</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-dark-700 p-8 rounded-3xl border border-white/10 hover:border-gold-500 transition-all group"
+          >
+            <div class="flex items-start gap-6">
+              <div class="text-4xl text-gold-500">
+                <i class="fas fa-cloud-download-alt"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-white mb-3">
+                  Bulk G-Drive Video Puller
+                </h3>
+                <p class="text-slate-400 leading-relaxed">
+                  Video masih di Google Drive? Copas link-nya, biarin aplikasi
+                  yang sedot ratusan video sekaligus ke RDP lo.
+                  <span class="text-white"
+                    >Cepat, stabil, dan otomatis skip file yang udah ada
+                    (Anti-Duplikat)!</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-dark-700 p-8 rounded-3xl border border-white/10 hover:border-gold-500 transition-all group"
+          >
+            <div class="flex items-start gap-6">
+              <div class="text-4xl text-gold-500">
+                <i class="fas fa-comment-dots"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-white mb-3">
+                  Auto Engagement Bot
+                </h3>
+                <p class="text-slate-400 leading-relaxed">
+                  Otomatis kasih komentar dan PIN komen di video yang baru
+                  upload.
+                  <span class="text-white"
+                    >Bikin penonton makin betah dan ningkatin algoritma channel
+                    lo secara instan!</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="py-24 relative overflow-hidden">
+          <div
+            class="max-w-4xl mx-auto bg-dark-800/80 backdrop-blur-xl border border-gold-500 p-10 md:p-16 rounded-3xl text-center shadow-glow-strong"
+          >
+            <div
+              class="inline-block px-4 py-1 bg-red-600 text-white font-bold text-xs rounded-full mb-6 uppercase animate-pulse"
+            >
+              Slot Promo Terbatas!
+            </div>
+
+            <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-6">
+              Berhenti Jadi <span class="text-red-500">Kuli Konten</span>,
+              Jadilah <span class="text-gold-500">Raja Estate!</span>
+            </h2>
+
+            <p class="text-xl text-slate-300 mb-6 max-w-2xl mx-auto">
+              Kenapa harus capek upload manual kalau ada mesin yang bisa kerja
+              24/7 buat lo? Ratusan peternak akun udah dapet
+              <b>Dollar Ijo</b> pake tools ini.
+            </p>
+
+            <div class="flex flex-col items-center mb-10">
+              <span class="text-slate-500 line-through text-lg"
+                >Rp 725.000</span
+              >
+              <span class="text-5xl font-black text-gold-500 mb-2"
+                >HARGA PROMO DISKON 90%</span
+              >
+              <p class="text-sm text-slate-400">
+                *Harga bisa naik sewaktu-waktu seiring update fitur V12
+              </p>
+            </div>
+
+            <a
+              href="https://lynk.id/maskdjie/2zqqgyeo9jjv"
+              class="inline-flex items-center gap-3 px-10 py-5 bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-2xl rounded-xl transition-all hover:scale-105 shadow-xl hover:shadow-gold-500/50"
+            >
+              <i class="fas fa-shopping-cart"></i>
+              AMANKAN LISENSI V11 SEKARANG!
+            </a>
+
+            <p class="mt-6 text-green-500 font-bold">
+              <i class="fas fa-user-shield"></i> Terverifikasi Aman & Support
+              Lifetime!
+            </p>
+
+            <div
+              class="mt-8 flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-slate-500"
+            >
+              <span class="flex items-center gap-2"
+                ><i class="fas fa-shield-alt text-gold-500"></i> Garansi
+                Support</span
+              >
+              <span class="flex items-center gap-2"
+                ><i class="fas fa-sync text-gold-500"></i> Lifetime Update</span
+              >
+              <span class="flex items-center gap-2"
+                ><i class="fas fa-lock text-gold-500"></i> Secure Payment</span
+              >
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <footer class="bg-black border-t border-white/5 py-10">
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <div class="text-center md:text-left">
+          <span class="text-white font-bold text-lg tracking-wide"
+            >YT ESTATE <span class="text-gold-500">PRO</span></span
+          >
+          <p class="text-slate-500 text-sm mt-2">
+            &copy; 2025 Mas K Djie. Tools Sultan buat Peternak Akun.
+          </p>
+        </div>
+
+        <div class="flex gap-6">
+          <a
+            href="https://t.me/maskdjie"
+            class="text-slate-400 hover:text-gold-500 transition-colors"
+            ><i class="fab fa-telegram text-2xl"></i
+          ></a>
+          <a
+            href="https://shpe.fun/ytestatebuilder.pro/"
+            class="text-slate-400 hover:text-gold-500 transition-colors"
+            ><i class="fas fa-globe text-2xl"></i
+          ></a>
+          <a
+            href="https://fb.me/maskdjie"
+            class="text-slate-400 hover:text-gold-500 transition-colors"
+            ><i class="fab fa-facebook text-2xl"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <button
+      id="backToTop"
+      onclick="scrollToTop()"
+      class="fixed bottom-2 right-2 z-50 bg-gold-500 hover:bg-gold-400 text-black w-10 h-10 rounded-full shadow-glow flex items-center justify-center transition-all duration-500 transform translate-y-24 opacity-0 invisible group"
+    >
+      <i
+        class="fas fa-arrow-up text-xl group-hover:-translate-y-1 transition-transform duration-300"
+      ></i>
+      <span
+        class="absolute inset-0 rounded-full border-2 border-gold-500 animate-ping opacity-20"
+      ></span>
+    </button>
+
+    <script>
+      // Logic Back to Top
+      const backToTopBtn = document.getElementById("backToTop");
+
+      window.onscroll = function () {
+        // Tampilkan tombol jika scroll lebih dari 300px
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          backToTopBtn.classList.remove(
+            "translate-y-24",
+            "opacity-0",
+            "invisible"
+          );
+        } else {
+          // Sembunyikan dengan animasi turun ke bawah
+          backToTopBtn.classList.add(
+            "translate-y-24",
+            "opacity-0",
+            "invisible"
+          );
+        }
+      };
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth", // Efek scroll halus
+        });
+      }
+    </script>
+  </body>
+</html>
